@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Paintbrush, Server, ShieldAlert, CheckCircle, Mail, AlertTriangle, ArrowRight, GitPullRequest, X } from "lucide-react";
-import { LogEntry } from "@/app/ide/page";
+import { LogEntry } from "@/app/ide/ideWorkspaceContent";
 
 export interface PushConfig {
   username: string;
