@@ -77,7 +77,12 @@ export default function CodeWorkspace({ openFiles, activeFile, setActiveFile, cl
       <div className="flex-1 w-full pt-2">
         <Editor
           height="100%"
-          language={activeFile.endsWith('.tf') ? 'hcl' : 'plaintext'}
+          // FIX: Improved language detection for better dev experience
+          language={
+            activeFile.endsWith('.tf') ? 'hcl' : 
+            activeFile.endsWith('.json') ? 'json' : 
+            activeFile.endsWith('.md') ? 'markdown' : 'plaintext'
+          }
           theme="vs-dark"
           value={activeContent}
           onChange={(val) => updateContent(activeFile, val || "")}
